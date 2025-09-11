@@ -1,7 +1,7 @@
 /* === STYLE DASAR === */
 body {
   font-family: Arial, sans-serif;
-  background-image: url('image/l4.jpg');  /* Ganti dengan path gambar yang sesuai */
+  background-image: url('../image/l4.jpg');  /* Ganti dengan path gambar yang sesuai */
   background-size: cover;  /* Memastikan gambar menutupi seluruh layar */
   background-position: center;  /* Menempatkan gambar di tengah */
   margin: 0;
