@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>DSPS V.1</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://unpkg.com/@supabase/supabase-js"></script>
+</head>
+<body>
+  <!-- Header (tetap full width) -->
+  <header class="header">
+    <div class="actions">
+      <span id="clock"></span>
+      <button id="logoutBtn">Logout</button>
+    </div>
+  </header>
+
+  <!-- Layout bawah: Sidebar + Main -->
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Menu</h3>
+      <ul class="menu">
+        <li><button class="menu-btn">DATA BARANG</button>
+          <ul class="submenu">
+            <li><a href="index.html">TAMBAH BARANG</a></li>
+            <li><a href="../data stok.html">DATA STOK</a></li>
+            <li><a href="#">LOGISTIK</a></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <h3>Daftar Stok Barang</h3>
+        <table id="stokTable">
+            <thead>
+              <tr>
+                <th>Kode Barang</th>
+                <th>Nama Barang</th>
+                <th>Stok Barang</th>
+                <th>Harga Satuan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Data stok akan ditampilkan di sini -->
+            </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/data stok.js"></script>
+</body>
+</html>

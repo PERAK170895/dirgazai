@@ -1,0 +1,206 @@
+/* === STYLE DASAR === */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('image/l4.jpg');  /* Ganti dengan path gambar yang sesuai */
+  background-size: cover;  /* Memastikan gambar menutupi seluruh layar */
+  background-position: center;  /* Menempatkan gambar di tengah */
+  margin: 0;
+  padding: 20px;
+}
+
+/* === HEADER (Profil, Logout, Jam) === */
+.header {
+  background: rgba(255, 255, 255, 0.8);  /* Ganti dengan warna transparan jika ingin gambar tetap terlihat */
+  color: rgb(126, 19, 19);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.header .profile {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.header .actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#logoutBtn {
+  background: #e74c3c;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#logoutBtn:hover {
+  background: #c0392b;
+}
+
+#clock {
+  font-family: monospace;
+  font-size: 14px;
+}
+
+/* === KONTEN UTAMA === */
+.container {
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+/* === FORM === */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+form button {
+  background: #eb7531;
+  padding: 10px 18px;
+  font-size: 14px;
+}
+
+button {
+  background: #e21a1a;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+/* === TABEL === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #08f7bb;
+  color: rgb(2, 0, 0);
+}
+
+th, td {
+  border: 1px solid #4b3737;
+  padding: 8px;
+  text-align: center;
+  
+}
+
+tr:nth-child(even) {
+  background: #e7e9d4a9;
+}
+
+/* === HEADER full width === */
+.header {
+  background: #d7e7bd;
+  color: rgb(7, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: 0; /* biar rata kiri-kanan */
+}
+
+/* Layout bawah */
+.layout {
+  display: flex;
+  min-height: calc(100vh - 60px); /* tinggi penuh minus header */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #d7dee6;
+  color: rgb(17, 13, 13);
+  padding: 15px;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu > li {
+  margin-bottom: 10px;
+}
+
+.menu-btn {
+  width: 100%;            /* penuh lebar sidebar */
+  box-sizing: border-box; /* padding dihitung dalam lebar */
+  cursor: pointer;        /* bisa diklik */
+  background: #424441;    /* warna label */
+  color: white;
+  font-weight: bold;
+  border: none;
+  text-align: left;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.submenu {
+  display: block;        /* selalu tampil */
+  list-style: none;
+  padding-left: 15px;
+  margin-top: 5px;
+}
+
+.submenu li {
+  margin: 5px 0;
+}
+
+.submenu a {
+  color: #201e1a;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.submenu a:hover {
+  color: #1983da;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
