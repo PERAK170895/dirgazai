@@ -82,7 +82,7 @@ form label {
 form input {
   padding: 8px;
   font-size: 14px;
-  border: 1px solid #ccc;
+  border: 1px solid #b82b2b;
   border-radius: 6px;
 }
 
@@ -104,14 +104,14 @@ button {
 /* === TABEL === */
 /* === TABEL === */
 table {
+  margin-bottom: 30px; /* jarak 30px antar tabel dan elemen di bawahnya */
+  border-collapse: collapse; /* biar border rapi */
   width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px; /* Menambahkan jarak bawah antara tabel */
 }
 
 thead {
   background: #08f7bb;
-  color: rgb(2, 0, 0);
+  color: rgb(14, 114, 245);
 }
 
 th, td {
@@ -127,7 +127,7 @@ tr:nth-child(even) {
 
 /* === HEADER full width === */
 .header {
-  background: #d7e7bd;
+  background: #8eb948;
   color: rgb(7, 0, 0);
   display: flex;
   justify-content: space-between;
@@ -203,9 +203,10 @@ tr:nth-child(even) {
 
 /* Main content */
 .main-content {
-  flex: 1;
+  flex: 1 1 auto; /* fleksibel */
   padding: 20px;
 }
+
 html, body {
   height: 100%;
   margin: 0;
@@ -214,14 +215,19 @@ html, body {
 }
 
 .layout {
-  flex: 1;
+  flex: 1 0 auto; /* atau cukup flex: 1 */
+  display: flex;  /* ini sudah ada untuk sidebar + main content */
 }
 
+/* footer tetap di bawah, tidak mengembang */
 .footer {
-  background-color: #9feed0;
+  flex-shrink: 0;
+  background-color: #dfe9e5;
   text-align: center;
   padding: 15px 0;
-  font-size: 14px;
+  font-size: 12px;
   color: #333;
   border-top: 1px solid #ccc;
+  font-weight: bold; /* ini buat bikin teks jadi tebal */
 }
+

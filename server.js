@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+app.use(cors()); // Menambahkan middleware CORS
 const dotenv = require('dotenv');
 const { createClient } = require('@supabase/supabase-js');
 
@@ -16,7 +17,7 @@ app.use(express.json()); // Untuk parsing JSON request body
 // Supabase client
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
 
-// Route untuk root (/) halaman
+// Route untuk root (/)
 app.get('/', (req, res) => {
   res.send('Selamat datang di API Stok Barang!');
 });
@@ -60,10 +61,6 @@ app.post('/api/stok', async (req, res) => {
   }
 });
 
-// Menjalankan server
-app.listen(port, () => {
-  console.log(`Server berjalan di http://localhost:${port}`);
-});
 // Route untuk menghapus data stok berdasarkan ID
 app.delete('/api/stok/:kode_barang', async (req, res) => {
   const { kode_barang } = req.params;  // Mengambil kode_barang dari URL parameter
@@ -82,4 +79,52 @@ app.delete('/api/stok/:kode_barang', async (req, res) => {
     console.error("Error deleting data:", error);
     res.status(500).json({ error: 'Terjadi kesalahan saat menghapus data' });
   }
+});
+
+// === Route untuk mengelola data "reques" ===
+
+// Route untuk mengambil data reques
+// Route untuk mengambil data reques
+app.get('/api/reques', async (req, res) => {
+  try {
+    const { data, error } = await supabase
+      .from('reques')  // Pastikan nama tabel sesuai
+      .select('nama_web, telkomsel, xl')  // Pastikan kolom sesuai
+      .order('nama_web', { ascending: true });
+
+    if (error) throw error;
+
+    res.json(data);  // Mengirim data sebagai response
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Terjadi kesalahan saat mengambil data' });
+  }
+});
+
+
+// Route untuk menambahkan data reques
+app.post('/api/reques', async (req, res) => {
+  const { nama_web, telkomsel, xl } = req.body;
+
+  if (!nama_web || !telkomsel || !xl) {
+    return res.status(400).json({ error: 'Semua kolom harus diisi' });
+  }
+
+  try {
+    const { data, error } = await supabase
+      .from('reques')  // Menyesuaikan dengan nama tabel di Supabase
+      .insert([{ nama_web, telkomsel, xl }]);
+
+    if (error) throw error;
+
+    res.status(201).json({ message: 'Data berhasil ditambahkan', data });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Terjadi kesalahan saat menambah data reques' });
+  }
+});
+
+// Menjalankan server
+app.listen(port, () => {
+  console.log(`Server berjalan di http://localhost:${port}`);
 });

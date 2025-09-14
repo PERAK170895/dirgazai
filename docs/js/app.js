@@ -77,3 +77,16 @@ form.addEventListener("submit", async (e) => {
 
 // === Load Data Saat Halaman Dimuat ===
 document.addEventListener("DOMContentLoaded", loadStok);
+async function loadStok() {
+  if (!tableBody) return; // <- Tambahkan ini
+
+  const response = await fetch('http://localhost:3000/api/stok');
+  const data = await response.json();
+
+  if (data.error) {
+    console.error(data.error);
+    return;
+  }
+
+  renderStokTable(data);
+}

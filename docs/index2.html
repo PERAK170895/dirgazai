@@ -2,9 +2,11 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>DSPS V.1</title>
-  <link rel="stylesheet" href="../style.css">
-  <script src="https://unpkg.com/@supabase/supabase-js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Data Reques</title>
+  <link rel="stylesheet" href="css/data stok.css"> <!-- Menghubungkan CSS -->
+  <link rel="stylesheet" href="css/style.css"> <!-- Menghubungkan CSS -->
+  
 </head>
 <body>
   <!-- Header (tetap full width) -->
@@ -24,42 +26,77 @@
         <li><button class="menu-btn">DATA BARANG</button>
           <ul class="submenu">
             <li><a href="index.html">TAMBAH BARANG ➕➕➕</a></li>
-            <li><a href="FRONTEND/data stok.html">DATA STOK 🚚🚛</a></li>
-            <li><a href="#">LOGISTIK</a></li>>
+            <li><a href="index.html">TAMBAH REQUES ➕</a></li>
+            <li><a href="data stok.html">DATA STOK 🚚🚛</a></li>
+            <li><a href="index2.html">LOGISTIK</a></li>
+        <li><button class="menu-btn">DATA KIRIM</button>
+          <ul class="submenu"></ul>
+            <li><a href="index2.html">LOGISTIK</a></li>
+            <li><a href="index2.html">LOGISTIK</a></li>
+            <li><a href="index2.html">LOGISTIK</a></li>
+            <li><a href="index2.html">LOGISTIK</a></li>
+        <li><button class="menu-btn">DATA REQUES</button>
+          <ul class="submenu"></ul>
+            <li><a href="index2.html">LOGISTIK</a></li>
+            <li><a href="index2.html">LOGISTIK</a></li><li><a href="index2.html">LOGISTIK</a></li>
+
           </ul>
         </li>
       </ul>
     </aside>
 
     <!-- Main Content -->
-    <main class="main-content">
-      <div class="container">
-        <h2>Formulir Stok Barang Masuk</h2>
-        <form id="stokForm">
-          <div class="form-group">
-            <label for="namaBarang">Nama Barang:</label>
-            <input type="text" id="namaBarang" required />
-          </div>
-          <div class="form-group">
-            <label for="kodeBarang">Kode Barang:</label>
-            <input type="text" id="kodeBarang" required />
-          </div>
-          <div class="form-group">
-            <label for="stokBarang">Stok Barang:</label>
-            <input type="number" id="stokBarang" required />
-          </div>
-          <div class="form-group">
-            <label for="hargaSatuan">Harga Satuan:</label>
-            <input type="number" id="hargaSatuan" required />
-          </div>
-          <button type="submit">Tambah Barang</button>
-        </form>
+  <div class="container">
+    <h1>Form Pengiriman Barang Reques</h1>
 
+    <!-- Form Input Data -->
+    <div class="form-container">
+      <label for="nama_web">Nama Web:</label>
+      <input type="text" id="nama_web" required><br><br>
 
-      </div>
-    </main>
+      <label for="telkomsel">Telkomsel:</label>
+      <input type="number" id="telkomsel" required><br><br>
+
+      <label for="xl">XL:</label>
+      <input type="number" id="xl" required><br><br>
+
+      <button onclick="sendData()">Kirim Data</button>
+    </div>
+
+    <h2>Data Reques</h2>
+    <!-- Tabel untuk menampilkan data -->
+    <table id="requesTable" border="1">
+      <tr>
+        <th>Nama Web</th>
+        <th>Telkomsel</th>
+        <th>XL</th>
+      </tr>
+    </table>
+<br><br><br><br>
+    <h2>Data Stok Barang</h2>
+<table id="stokTable" border="1">
+  <thead>
+    <tr>
+      <th>Kode Barang</th>
+      <th>Nama Barang</th>
+      <th>Stok Barang</th>
+      <th>Harga Satuan</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Data stok akan ditambahkan di sini lewat JS -->
+  </tbody>
+</table>
+  </div>
   </div>
 
-  <script src="../js/app.js"></script>
+  
+
+<script src="js/data stok.js"></script> <!-- Menghubungkan JavaScript -->
+    <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 DSPS V.1 - Dibuat oleh Comporing_dirgazai</p>
+  </footer>
+
 </body>
 </html>
