@@ -1,6 +1,5 @@
 const express = require('express');
 const cors = require('cors');
-app.use(cors()); // Menambahkan middleware CORS
 const dotenv = require('dotenv');
 const { createClient } = require('@supabase/supabase-js');
 
