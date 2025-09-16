@@ -1,0 +1,83 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px;
+  background-image: url('../image/l4.jpg'); /* atau URL gambar online */
+  background-size: cover;        /* gambar menutupi seluruh area */
+  background-repeat: no-repeat;  /* jangan ulangi gambar */
+  background-position: center;   /* posisikan gambar di tengah */
+  background-attachment: fixed;  /* gambar tetap saat scroll */
+  color: #333;
+}
+
+h1 {
+  color: #f3e4e4;
+  background-color: #333;
+  max-width: 30vw; 
+}
+
+h2 {
+  color: #333;
+  background-color: #28e0d7be;
+  max-width: 20vw; /* maksimal lebar setengah viewport */
+  padding: 5px;
+  /* Bisa tambahkan display block supaya max-width berfungsi */
+  display: block;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+  background-color: #c28181;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  background-color: #eaeaea;
+  border: 1px solid #aed678;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #9ff317;
+}
+
+
+button {
+  background: linear-gradient(135deg, #0f1d08, #4caf50);
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(33, 53, 30, 0.582);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  margin-bottom: 40px;
+  display: inline-block;
+  font-size: 1rem;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #6eb34a, #3e8e41);
+  box-shadow: 0 6px 12px rgba(62, 142, 65, 0.6);
+  transform: translateY(-2px);
+}
+
+button:active {
+  background: linear-gradient(135deg, #558236, #2f662b);
+  box-shadow: 0 2px 6px rgba(31, 70, 23, 0.7);
+  transform: translateY(0);
+}
+.footer {
+  flex-shrink: 0;
+  background-color: #dfe9e586;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 12px;
+  color: #020101;
+  border-top: 1px solid #ccc;
+  font-weight: bold; /* ini buat bikin teks jadi tebal */
+}

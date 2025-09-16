@@ -2,73 +2,45 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>DSPS V.1</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="https://unpkg.com/@supabase/supabase-js"></script>
+  <title>Data dari Supabase</title>
+  <link rel="stylesheet" href="css/tahan.css">
 </head>
 <body>
-  <!-- Header (tetap full width) -->
-  <header class="header">
-    <div class="actions">
-      <span id="clock"></span>
-      <button id="logoutBtn">Logout</button>
-    </div>
-  </header>
+  <h1>📦 Data Stok & Reques</h1>
 
-  <!-- Layout bawah: Sidebar + Main -->
-  <div class="layout">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <h3>Menu</h3>
-      <ul class="menu">
-        <li><button class="menu-btn">DATA BARANG</button>
-          <ul class="submenu">
-            <li><a href="index.html">TAMBAH BARANG ➕➕➕</a></li>
-            <li><a href="index.html">TAMBAH REQUES ➕</a></li>
-            <li><a href="data stok.html">DATA STOK 🚚🚛</a></li>
-            <li><a href="index2.html">LOGISTIK</a></li>
+  <h2>Stok Barang</h2>
+  <table id="stokTable">
+    <thead>
+      <tr>
+        <th>Nama Barang</th>
+        <th>Kode Barang</th>
+        <th>Stok Barang</th>
+        <th>Harga Satuan</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <button id="downloadStokCSV">Download data Stok</button>
 
-          </ul>
-        </li>
-      </ul>
-    </aside>
+  <h2>Reques</h2>
+  <table id="requesTable">
+    <thead>
+      <tr>
+        <th>Nama Web</th>
+        <th>Telkomsel</th>
+        <th>XL</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+<button id="downloadRequesCSV">Download data Reques</button>
 
-    <!-- Main Content -->
-    <main class="main-content">
-      <div class="container">
-        <h2>Formulir Stok Barang Masuk</h2>
-        <form id="stokForm">
-          <div class="form-group">
-            <label for="namaBarang">Nama Barang:</label>
-            <input type="text" id="namaBarang" required />
-          </div>
-          <div class="form-group">
-            <label for="kodeBarang">Kode Barang:</label>
-            <input type="text" id="kodeBarang" required />
-          </div>
-          <div class="form-group">
-            <label for="stokBarang">Stok Barang:</label>
-            <input type="number" id="stokBarang" required />
-          </div>
-          <div class="form-group">
-            <label for="hargaSatuan">Harga Satuan:</label>
-            <input type="number" id="hargaSatuan" required />
-          </div>
-          <button type="submit">Tambah Barang</button>
-        </form>
-
-
-      </div>
-    </main>
-  </div>
-
-  <script src="js/app.js"></script>
-
+  <script src="js/tahan.js"></script>
 
   <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2025 DSPS V.1 - Dibuat oleh Comporing_dirgazai</p>
   </footer>
-
+   
 </body>
 </html>
