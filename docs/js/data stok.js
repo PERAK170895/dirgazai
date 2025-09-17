@@ -1,34 +1,55 @@
+// Fungsi untuk membersihkan input, hanya ambil angka, kalau kosong jadi '0'
+function cleanNumberInput(value) {
+  const cleaned = value.replace(/\D/g, '');
+  return cleaned === '' ? '0' : cleaned;
+}
+
 // Fungsi untuk menangani pengiriman data
 async function sendData() {
-  const namaWeb = document.getElementById('nama_web').value;
-  const telkomsel = document.getElementById('telkomsel').value;
-  const xl = document.getElementById('xl').value;
+  const namaWeb = document.getElementById('nama_web').value.trim();
+  let telkomsel = document.getElementById('telkomsel').value;
+  let xl = document.getElementById('xl').value;
 
-  // Validasi input
-  if (!namaWeb || !telkomsel || !xl) {
-    alert("Semua kolom harus diisi!");
+  // Bersihkan input telkomsel dan xl dari non-digit
+  telkomsel = cleanNumberInput(telkomsel);
+  xl = cleanNumberInput(xl);
+
+  // Validasi hanya namaWeb yang wajib
+  if (!namaWeb) {
+    alert("Kolom 'Nama Web' harus diisi!");
     return;
   }
 
-  const response = await fetch('http://localhost:3000/api/reques', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      nama_web: namaWeb,
-      telkomsel: telkomsel,
-      xl: xl
-    }),
-  });
+  try {
+    const response = await fetch('http://localhost:3000/api/reques', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        nama_web: namaWeb,
+        telkomsel: Number(telkomsel), // kirim sebagai angka
+        xl: Number(xl),
+      }),
+    });
 
-  const data = await response.json();
+    const data = await response.json();
 
-  if (response.ok) {
-    alert('Data berhasil dikirim!');
-    getData(); // Menampilkan data setelah pengiriman sukses
-  } else {
-    alert('Terjadi kesalahan: ' + data.error);
+    if (response.ok) {
+      alert('Data berhasil dikirim!');
+
+      // Kosongkan semua kolom input
+      document.getElementById('nama_web').value = '';
+      document.getElementById('telkomsel').value = '';
+      document.getElementById('xl').value = '';
+
+      getData(); // reload data setelah submit sukses
+    } else {
+      alert('Terjadi kesalahan: ' + data.error);
+    }
+  } catch (error) {
+    console.error('Fetch error:', error);
+    alert('Terjadi kesalahan saat mengirim data.');
   }
 }
 
@@ -55,9 +76,7 @@ async function getData() {
     data.forEach(item => {
       const row = document.createElement('tr');
       row.innerHTML = `
-        <td>${item.nama_web}</td>
-        <td>${item.telkomsel}</td>
-        <td>${item.xl}</td>
+
       `;
       table.appendChild(row);
     });
@@ -68,9 +87,6 @@ async function getData() {
   }
 }
 
-
-// Panggil fungsi untuk mendapatkan data saat halaman dimuat
-window.onload = getData;
 // Fungsi untuk mengambil dan menampilkan data stok
 async function getStokData() {
   try {
@@ -89,10 +105,7 @@ async function getStokData() {
     data.forEach(item => {
       const row = document.createElement('tr');
       row.innerHTML = `
-        <td>${item.kode_barang}</td>
-        <td>${item.nama_barang}</td>
-        <td>${item.stok_barang}</td>
-        <td>${item.harga_satuan}</td>
+
       `;
       tbody.appendChild(row);
     });
@@ -103,7 +116,7 @@ async function getStokData() {
   }
 }
 
-// Panggil fungsi getStokData ketika halaman dimuat
+// Panggil fungsi getData dan getStokData ketika halaman dimuat
 window.onload = function() {
   getData();   // Tabel Request
   getStokData();  // Tabel Stok

@@ -2,49 +2,80 @@ body {
   font-family: Arial, sans-serif;
   margin: 40px;
   background-image: url('../image/l4.jpg'); /* atau URL gambar online */
-  background-size: cover;        /* gambar menutupi seluruh area */
-  background-repeat: no-repeat;  /* jangan ulangi gambar */
-  background-position: center;   /* posisikan gambar di tengah */
-  background-attachment: fixed;  /* gambar tetap saat scroll */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   color: #333;
 }
 
+/* === Judul === */
 h1 {
   color: #f3e4e4;
   background-color: #333;
   max-width: 30vw; 
+  padding: 6px 12px;
+  border-radius: 6px;
 }
 
 h2 {
   color: #333;
   background-color: #28e0d7be;
-  max-width: 20vw; /* maksimal lebar setengah viewport */
-  padding: 5px;
-  /* Bisa tambahkan display block supaya max-width berfungsi */
+  max-width: 20vw;
+  padding: 5px 10px;
   display: block;
+  border-radius: 6px;
+  font-size: 1.1rem;
 }
 
-
+/* === Tabel modern === */
 table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 40px;
-  background-color: #c28181;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  width: auto;             /* lebar tabel ngikut isi */
+  table-layout: auto;      /* kolom ngikut konten */
+  margin-bottom: 30px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  overflow: hidden; /* biar radius kepotong rapi */
 }
 
-th, td {
-  background-color: #eaeaea;
-  border: 1px solid #aed678;
-  padding: 10px;
-  text-align: left;
+/* Header tabel */
+table thead th {
+  background: #237cd4;
+  color: white;
+  text-align: center;
+  padding: 8px;
 }
 
-th {
-  background-color: #9ff317;
+/* Isi tabel */
+table tbody td {
+  border: 1px solid #ddd;
+  padding: 6px 10px;
+  text-align: center;       /* rata tengah horizontal */
+  vertical-align: middle;   /* rata tengah vertikal */
 }
 
+/* Kolom angka rata kanan */
+table tbody td.number {
 
+  text-align: right;
+  font-weight: bold;
+  color: #2a2a2a;
+}
+
+/* Striping baris */
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Efek hover */
+table tbody tr:hover {
+  background: #eaf2ff;
+}
+
+/* === Tombol === */
 button {
   background: linear-gradient(135deg, #0f1d08, #4caf50);
   border: none;
@@ -55,7 +86,7 @@ button {
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(33, 53, 30, 0.582);
   transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-  margin-bottom: 40px;
+  margin: 10px 0 30px 0;
   display: inline-block;
   font-size: 1rem;
 }
@@ -71,13 +102,15 @@ button:active {
   box-shadow: 0 2px 6px rgba(31, 70, 23, 0.7);
   transform: translateY(0);
 }
+
+/* === Footer === */
 .footer {
   flex-shrink: 0;
   background-color: #dfe9e586;
   text-align: center;
-  padding: 5px 0;
+  padding: 8px 0;
   font-size: 12px;
   color: #020101;
   border-top: 1px solid #ccc;
-  font-weight: bold; /* ini buat bikin teks jadi tebal */
+  font-weight: bold;
 }

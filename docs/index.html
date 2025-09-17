@@ -6,8 +6,14 @@
   <link rel="stylesheet" href="css/tahan.css">
 </head>
 <body>
-  <h1>📦 Data Stok & Reques</h1>
+  <nav>
+    <ul>
+      <li><a href="index2.html"><button>OPERASIONAL</button></a></li>
+    </ul>
+  </nav>
 
+  <div class="table-container">
+<div class="table-wrapper">
   <h2>Stok Barang</h2>
   <table id="stokTable">
     <thead>
@@ -20,27 +26,34 @@
     </thead>
     <tbody></tbody>
   </table>
-  <button id="downloadStokCSV">Download data Stok</button>
+  <div class="table-footer">
+    <button id="downloadStokCSV">unduh Stok</button>
+  </div>
+</div>
 
-  <h2>Reques</h2>
-  <table id="requesTable">
-    <thead>
-      <tr>
-        <th>Nama Web</th>
-        <th>Telkomsel</th>
-        <th>XL</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-<button id="downloadRequesCSV">Download data Reques</button>
 
+    <div class="table-wrapper">
+      <h2>Data Reques</h2>
+      <table id="requesTable">
+        <thead>
+          <tr>
+            <th>Nama Web</th>
+            <th>Telkomsel</th>
+            <th>XL</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="table-footer">
+      <button id="downloadRequesCSV">unduh Reques</button>
+    </div>
+  </div>
+</body>
   <script src="js/tahan.js"></script>
 
   <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2025 DSPS V.1 - Dibuat oleh Comporing_dirgazai</p>
   </footer>
-   
 </body>
 </html>

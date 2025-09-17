@@ -105,9 +105,10 @@ app.get('/api/reques', async (req, res) => {
 app.post('/api/reques', async (req, res) => {
   const { nama_web, telkomsel, xl } = req.body;
 
-  if (!nama_web || !telkomsel || !xl) {
-    return res.status(400).json({ error: 'Semua kolom harus diisi' });
-  }
+if (!nama_web) {
+  return res.status(400).json({ error: 'Kolom nama_web harus diisi' });
+}
+
 
   try {
     const { data, error } = await supabase
