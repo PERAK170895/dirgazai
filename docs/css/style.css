@@ -1,7 +1,7 @@
 /* === STYLE DASAR === */
 body {
   font-family: Arial, sans-serif;
-  background-image: url('../image/l4.jpg');  /* Ganti dengan path gambar yang sesuai */
+  background-image: url('https://user-images.githubusercontent.com/25878302/144499035-2911184c-76d3-4611-86e7-bc4e8ff84ff5.jpg');  
   background-size: cover;  /* Memastikan gambar menutupi seluruh layar */
   background-position: center;  /* Menempatkan gambar di tengah */
   margin: 0;
@@ -93,7 +93,7 @@ form button {
 }
 
 button {
-  background: #e21a1a;
+  background: #11e5ec86;
   border: none;
   color: white;
   cursor: pointer;
@@ -145,7 +145,7 @@ tr:nth-child(even) {
 /* Sidebar */
 .sidebar {
   width: 220px;
-  background: #d7dee6;
+  background-image: url('https://user-images.githubusercontent.com/25878302/144499035-2911184c-76d3-4611-86e7-bc4e8ff84ff5.jpg');  
   color: rgb(17, 13, 13);
   padding: 15px;
 }
