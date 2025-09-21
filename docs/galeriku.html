@@ -5,11 +5,16 @@
   <title>Gallery Kenangan</title>
   <link rel="stylesheet" href="css/kenangan.css">
   <link rel="stylesheet" href="css/style.css">
-
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/supabase.min.js"></script>
 </head>
 <body>
   <h2>Gallery Kenangan</h2>
+
+  <!-- Form Upload -->
+  <form id="uploadForm">
+    <input type="file" id="fileInput" accept="image/*" required>
+    <button type="submit">Upload</button>
+  </form>
+
   <div id="gallery"></div>
 
   <script src="js/gallery.js"></script>

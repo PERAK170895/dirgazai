@@ -2,12 +2,15 @@
 async function fetchData(url, tableId, columns) {
   try {
     const response = await fetch(url);
-    const data = await response.json();
+    if (!response.ok) throw new Error(response.statusText);
+
+    const result = await response.json();
+    if (!result.success) throw new Error(result.error);
 
     const tbody = document.querySelector(`#${tableId} tbody`);
     tbody.innerHTML = '';
 
-    data.forEach(item => {
+    result.data.forEach(item => {
       const row = document.createElement('tr');
       columns.forEach(col => {
         const cell = document.createElement('td');
@@ -65,6 +68,7 @@ function downloadCSV(csvContent, filename) {
 document.addEventListener('DOMContentLoaded', () => {
   fetchData('http://localhost:3000/api/stok', 'stokTable',
     ['nama_barang', 'kode_barang', 'stok_barang', 'harga_satuan']);
+  
   fetchData('http://localhost:3000/api/reques', 'requesTable',
     ['nama_web', 'telkomsel', 'xl']);
 

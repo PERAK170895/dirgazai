@@ -8,9 +8,45 @@ h2 {
   color: #333;
 }
 
-#gallery img {
-  width: 200px;
-  margin: 10px;
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.img-wrapper {
+  position: relative; /* penting untuk tombol delete */
+}
+
+.thumb {
+  width: 100%;
+  height: auto;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.thumb:hover {
+  transform: scale(1.05);
+}
+
+.delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255,0,0,0.7);
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 3px 6px;
+}
+
+.delete-btn:hover {
+  background: red;
+}
+
+#uploadForm {
+  margin-bottom: 20px;
 }
